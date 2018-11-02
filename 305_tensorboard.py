@@ -25,7 +25,7 @@ loss = tf.losses.mean_squared_error(tf_y, output, scope='loss')
 train_op = tf.train.GradientDescentOptimizer(learning_rate=0.5).minimize(loss)
 tf.summary.scalar('loss', loss)     # add loss to scalar summary
 
-gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333, \
+gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333,
                             allow_growth=True)
 config=tf.ConfigProto(gpu_options=gpu_options, \
                       allow_soft_placement=True, \
